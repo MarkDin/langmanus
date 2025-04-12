@@ -1,0 +1,23 @@
+name = "lang-manus"
+main = "src/api/app.py"
+compatibility_date = "2024-04-12"
+
+[build]
+command = "pip install -r requirements.txt"
+
+[env.production]
+workers_dev = true
+route = "langmanus.com/*"
+
+[env.production.vars]
+ENVIRONMENT = "production"
+
+[env.staging]
+workers_dev = true
+route = "staging.langmanus.com/*"
+
+[env.staging.vars]
+ENVIRONMENT = "staging"
+
+[site]
+bucket = "./assets"
